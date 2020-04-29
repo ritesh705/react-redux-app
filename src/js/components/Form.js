@@ -33,7 +33,7 @@ class ConnectedForm extends Component
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label htmlFor="title">Title</label>
+          <label>Title</label>
           <input type="text" id="title" value={title} onChange={this.handleChange} />
         </div>
         <button type="submit">SAVE</button>

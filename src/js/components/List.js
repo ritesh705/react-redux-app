@@ -1,14 +1,17 @@
 import React from "react";
 import {connect} from "react-redux";
 
+// React Component
 const ConnectedList = ({articles}) =>
 {
-   // React Componennt
-      return (<div>
-               <ul>
-                  {articles.map((article)=><li key={article.id}>{article.title}</li>)}
-               </ul>
-            </div>);
+   const articleItems = articles.map((article, index) =>
+         <li key={index}>
+            {article.title}
+         </li>
+   );
+   return (<div>
+            <ul>{articleItems}</ul>
+         </div>);
 }
 
 const mapStateToProps = (state) =>
