@@ -6,7 +6,7 @@ class ConnectedPost extends Component
 {
     componentDidMount()
     {
-        this.props.getData();
+        this.props.getExtData();
     }
 
     render()
@@ -29,6 +29,13 @@ function mapStateToProps(state)
     };
 }
 
-const Post = connect(mapStateToProps, {getData})(ConnectedPost);
+function mapDispatchToProps(dispatch)
+{
+  return{
+    getExtData: () => dispatch(getData())
+  };
+}
+
+const Post = connect(mapStateToProps, mapDispatchToProps)(ConnectedPost);
 
 export default Post;
